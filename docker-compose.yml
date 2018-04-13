@@ -3,8 +3,7 @@ services:
   front:
     image: nginx:latest
     ports:
-       - "80:80"
-       - "3000:3000"
+       - "80:80"       
     depends_on:
       - test-app-mysql
       - django-app
@@ -33,7 +32,7 @@ services:
   django-app:
     build: .  
     ports:
-      - "8080:8080"    
+      - "8090:8090"    
     volumes:
       - type: volume
         source: mystatic

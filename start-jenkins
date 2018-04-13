@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker run --name jenkins1 -p 9090:9090 -p 50000:50000 --env JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties" --env JENKINS_ARGS="--webroot=/var/jenkins/war --httpPort=9090 --ajp13Port=50000 --prefix=/jenkins" -v jenkins:/var/jenkins_home jenkins/jenkins:lts
+#docker run --name jenkins1 -p 9090:9090 -p 50000:50000 --env JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties" --env JENKINS_ARGS="--webroot=/var/jenkins/war --prefix=/jenkins" -v jenkins:/var/jenkins_home jenkins/jenkins:lts
+
+docker run --name jenkins1 -p 8080:8080 -p 50000:50000 --env JENKINS_ARGS="--webroot=/var/jenkins/war --prefix=/jenkins" -v jenkins:/var/jenkins_home jenkins/jenkins:lts
