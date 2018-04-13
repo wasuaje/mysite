@@ -41,9 +41,7 @@ services:
         volume:
           nocopy: true
     depends_on:
-       - test-app-mysql
-    #command: bash -c "./wait-for-mysql && python manage.py migrate --no-input && python manage.py collectstatic --no-input && uwsgi --ini conf.ini"
-    command: ["./start"]
-    #command: ["python", "manage.py","migrate","--no-input","--","python", "manage.py", "collectstatic"," --no-input"] 
+       - test-app-mysql      
+    command: ["./start"]    
 volumes:
    mystatic:
