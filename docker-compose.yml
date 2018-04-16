@@ -27,7 +27,7 @@ services:
       MYSQL_PASSWORD: 123456qwe
     volumes:
       - type: bind
-        source: ./mysql
+        source: /root/mysql-persist
         target: /var/lib/mysql
   django-app:
     build: .  
@@ -41,6 +41,6 @@ services:
           nocopy: true
     depends_on:
        - test-app-mysql      
-    command: ["./start"]    
+    command: ["./start"]
 volumes:
    mystatic:
