@@ -12,7 +12,6 @@ COPY ./app/ ./app/
 COPY ./project/ ./project/
 COPY ./conf.ini ./
 COPY ./manage.py ./
-COPY ./wait-for-mysql ./
 COPY ./start ./
 
 EXPOSE 8080
