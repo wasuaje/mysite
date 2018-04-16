@@ -29,6 +29,9 @@ services:
       - type: bind
         source: /root/mysql-persist
         target: /var/lib/mysql
+      - type: bind
+        source: ./mysql
+        target: /etc/mysql
   django-app:
     build: .  
     ports:
