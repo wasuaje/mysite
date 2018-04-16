@@ -23,4 +23,5 @@ if [ $? -eq 0 ]; then
     uwsgi --ini conf.ini
 else
     echo "Test Failed"
+    exit 1
 fi
