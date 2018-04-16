@@ -1,6 +1,5 @@
 #!/bin/bash
-docker exec -it -u root jenkins1 <<EOF
-bash && \
+docker exec -i -u root jenkins1 bash <<'EOF'
 apt-get update && \
 apt-get -y install apt-transport-https \
      ca-certificates \
