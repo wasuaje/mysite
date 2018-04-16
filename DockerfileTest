@@ -6,14 +6,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
-COPY ../requirements.txt ./
+COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY ./app/ ./app/
 COPY ./project/ ./project/
 COPY ./tests/ ./tests/
-COPY ./tests/setting.py ./project/setting.py
+COPY ./tests/settings_test.py ./project/
 COPY ./conf.ini ./
 COPY ./manage.py ./
-COPY ./start ./
 
-CMD ["./start"]
+CMD ["./tests/start"]
