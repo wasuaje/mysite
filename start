@@ -23,6 +23,6 @@ python manage.py test
 if [ $? -eq 0 ]; then
     uwsgi --ini conf.ini
 else
-    echo "Test Failed...exiting"
+    echo "Test Failed...exiting now"
     exit 1
 fi
