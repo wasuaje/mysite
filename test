@@ -1,0 +1,25 @@
+#!/bin/bash
+
+mysql_ready() {
+        mysqladmin ping --host=test-app-mysql --user=root --password=MYSQL_ROOT_PASSWORD > /dev/null 2>&1
+    }
+
+while !(mysql_ready)
+do
+   sleep 5
+   echo "waiting for mysql to continue..."
+done
+
+python manage.py makemigrations  --no-input
+python manage.py migrate  --no-input 
+python manage.py makemigrations app --no-input
+python manage.py migrate app --no-input 
+python manage.py collectstatic --no-input
+python manage.py initadmin
+
+python manage.py test --noinput 2> /var/log/test.log 1> /dev/null
+
+if [ $? -ne 0 ]; then
+    cat /var/log/test.log
+    exit 1
+fi

@@ -13,6 +13,7 @@ COPY ./project/ ./project/
 COPY ./conf.ini ./
 COPY ./manage.py ./
 COPY ./start ./
+COPY ./test ./
 
 EXPOSE 8080
 CMD ["uwsgi","--ini", "conf.ini"]
