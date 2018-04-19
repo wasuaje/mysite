@@ -11,7 +11,7 @@ class SignupTestCase(TestCase):
         Signup.objects.create(email="wasuaje@hotmail.com")
 
     def test_signup_are_correct(self):
-        """Animals that can speak are correctly identified"""
+        """Signups retrieve data"""
         gm = Signup.objects.get(email="wasuaje@gmail.com")
         hm = Signup.objects.get(email="wasuaje@hotmail.com")
         self.assertEqual(gm.email, 'wasuaje@gmail.com')
