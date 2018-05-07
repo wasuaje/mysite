@@ -45,10 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'app',
     'bootstrap3',
-    'django_comments',
-    'mptt',
-    'tagging',
-    'zinnia',
+
 ]
 
 MIDDLEWARE = [
