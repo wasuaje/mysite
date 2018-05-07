@@ -6,14 +6,14 @@ node{
 
     stage('Build') {
       echo "Building project"
-      sh  "/usr/local/bin/docker-compose build"
+      sh  "/usr/local/bin/docker-compose build -t testing:latest"
 
     }
 
     stage('Test') {
 
       echo "Running Tests"
-      sh '''docker run ./test
+      sh '''docker run testing:latest ./test
  
       if [ $? -ne 0 ]; then
               echo "Tests did not pass! Fix it."
