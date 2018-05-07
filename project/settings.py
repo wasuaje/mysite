@@ -16,6 +16,7 @@ import platform
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -25,7 +26,7 @@ SECRET_KEY = '05#m%tue+x8k2l7s*hk16^0l5xrd+!hwxxnle_v3oro*zalm)0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if platform.system() == 'Linux':
-    DEBUG = True
+    DEBUG = False
 else:
     DEBUG = True
 
@@ -41,8 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'app',
-    'bootstrap3'
+    'bootstrap3',
+    'django_comments',
+    'mptt',
+    'tagging',
+    'zinnia',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +66,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'zinnia.context_processors.version',  # Optional
             ],
         },
     },
