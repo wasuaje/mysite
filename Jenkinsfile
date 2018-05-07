@@ -20,7 +20,8 @@ node{
               exit 1
       fi
 
-       docker rm testing:latest   '''
+       docker rm testing:latest
+       '''
     }
 
     stage('Stop Services') {
