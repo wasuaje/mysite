@@ -19,7 +19,6 @@ node{
               echo "Tests did not pass! Fix it."
               exit 1
       fi
-
        
           '''
     }
@@ -35,7 +34,7 @@ node{
     }
 
     stage('Print Logs') {
-      echo "Printing logs"
+      echo "Printing logs."
       sh  '''/usr/local/bin/docker-compose logs --tail="all" '''
 
     }
