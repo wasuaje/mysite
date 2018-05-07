@@ -36,7 +36,7 @@ node{
 
     stage('Print Logs') {
       echo "Printing logs"
-      sh  "/usr/local/bin/docker-compose logs --tail="all" "
+      sh  '''/usr/local/bin/docker-compose logs --tail="all" '''
 
     }
 
