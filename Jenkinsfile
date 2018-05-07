@@ -13,7 +13,7 @@ node{
     stage('Test') {
 
       echo "Running Tests"
-      sh '''/usr/local/bin/docker run ./test
+      sh '''docker run ./test
  
       if [ $? -ne 0 ]; then
               echo "Tests did not pass! Fix it."
