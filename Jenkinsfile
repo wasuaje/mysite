@@ -19,7 +19,8 @@ node{
               echo "Tests did not pass! Fix it."
               exit 1
       fi
-      '''   
+
+      sh "docker rm testing:latest"   
     }
 
     stage('Stop Services') {
