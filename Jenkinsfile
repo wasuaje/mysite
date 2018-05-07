@@ -20,7 +20,7 @@ node{
               exit 1
       fi
 
-       docker rm testing:latest
+       
           '''
     }
 
