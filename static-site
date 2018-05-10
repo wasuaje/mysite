@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yum install -y git
+git clone https://github.com/wasuaje/wasuaje-site.git
+
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+cd wasuaje-site
+nikola build
+cp -r output/* /usr/src/static-site/
