@@ -6,7 +6,7 @@ node{
 
     stage('Build') {
       echo "Building project"
-      sh  "docker build --rm testing:latest ."
+      sh  "docker build -i --rm testing:latest ."
 
     }
 
