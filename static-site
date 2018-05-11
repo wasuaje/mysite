@@ -1,12 +1,15 @@
 #!/bin/bash
-
+echo "[STATIC SITE] YUM"
 yum install -y git
+echo "[STATIC SITE] git clone"
 git clone https://github.com/wasuaje/wasuaje-site.git
 
 if [ $? -ne 0 ]; then
     exit 1
 fi
-
+echo "[STATIC SITE] git clone"
 cd wasuaje-site
+echo "[STATIC SITE] nikola build"
 nikola build
+echo "[STATIC SITE] copying files"
 cp -r output/* /usr/src/static-site/
