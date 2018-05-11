@@ -9,9 +9,9 @@ services:
         volume:
           nocopy: true      
       - type: bind
-        source: ./static-site
+        source: ./static-site-build
         target: /usr/src
-    command: ["sh /usr/src/static-site"]
+    command: ["sh /usr/src/static-site-build"]
   front:
     image: nginx:latest
     ports:
