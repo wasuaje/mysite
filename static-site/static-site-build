@@ -1,4 +1,6 @@
 #!/bin/bash
+pwd
+ls -la
 echo "[STATIC SITE] YUM"
 yum install -y git
 echo "[STATIC SITE] git clone"
