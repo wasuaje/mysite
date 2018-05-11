@@ -10,7 +10,7 @@ services:
           nocopy: true      
       - type: bind
         source: ./static-site
-        target: /nikola
+        target: /nikola/static-site
     command: ["/nikola/static-site"]
   front:
     image: nginx:latest
