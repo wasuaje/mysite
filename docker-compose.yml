@@ -10,13 +10,14 @@ services:
           nocopy: true      
       - type: bind
         source: ./static-site
-        target: /nikola/static-site
-    command: ["sh static-site"]
+        target: ./static-site
+    command: [".static-site"]
   front:
     image: nginx:latest
     ports:
        - "80:80"       
     depends_on:
+      - static
       - test-app-mysql
       - django-app
     volumes:
