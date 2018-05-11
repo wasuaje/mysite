@@ -1,17 +1,5 @@
 version: "3.3"
-services: 
-  static:
-    image: dragas/nikola:alpine
-    volumes:
-      - type: volume
-        source: staticsite
-        target: /usr/src/static-site
-        volume:
-          nocopy: true      
-      - type: bind
-        source: ./static-site
-        target: /nikola/static-site
-    command: ["/nikola/static-site"]
+services:   
   front:
     image: nginx:latest
     ports:
@@ -28,6 +16,9 @@ services:
       - type: bind
         source: ./http-nginx
         target: /etc/nginx/conf.d
+      - type: bind
+        source: ./output
+        target: /usr/src/static-site
   test-app-mysql:
     image: mysql:5.7
     ports:

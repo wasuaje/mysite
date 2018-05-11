@@ -13,3 +13,6 @@ echo "[STATIC SITE] nikola build"
 nikola build
 echo "[STATIC SITE] copying files"
 cp -r output/* /usr/src/static-site/
+
+
+docker run --rm -ti -v ./output:/nikola dragas/nikola:alpine git clone https://github.com/wasuaje/wasuaje-site.git && cd /wasuaje-site && nikola build
