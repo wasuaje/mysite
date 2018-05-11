@@ -8,7 +8,10 @@ services:
         target: /usr/src/static-site
         volume:
           nocopy: true      
-    command: ["./static-site"]
+      - type: bind
+        source: ./static-site
+        target: /nikola
+    command: ["/nikola/static-site"]
   front:
     image: nginx:latest
     ports:
