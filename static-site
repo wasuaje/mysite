@@ -14,5 +14,4 @@ nikola build
 echo "[STATIC SITE] copying files"
 cp -r output/* /usr/src/static-site/
 
-
-docker run --rm -i -v /root/output:/nikola dragas/nikola:alpine git clone https://github.com/wasuaje/wasuaje-site.git && cd /nikola/wasuaje-site && nikola build
+#docker run --rm -i -v /root/output:/nikola dragas/nikola:alpine git clone https://github.com/wasuaje/wasuaje-site.git && cd /nikola/wasuaje-site && nikola build
