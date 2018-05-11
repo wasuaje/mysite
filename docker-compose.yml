@@ -9,7 +9,7 @@ services:
         volume:
           nocopy: true      
       - type: bind
-        source: ./static-site-build
+        source: ./static-site
         target: /usr/src
     command: ["sh /usr/src/static-site-build"]
   front:
