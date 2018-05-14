@@ -1,15 +1,5 @@
 version: "3.3"
-services: 
-  static:
-    image: dragas/nikola:alpine
-    volumes:
-      - type: volume
-        source: staticsite
-        target: /usr/src/static-site
-        volume:
-          nocopy: true      
-      - ./static-site/static-site-build:/nikola/static-cmd
-    command: ["sh static-cmd"]
+services:   
   front:
     image: nginx:latest
     ports:
