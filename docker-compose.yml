@@ -8,9 +8,7 @@ services:
         target: /usr/src/static-site
         volume:
           nocopy: true      
-      - type: bind
-        source: $$(pwd)/static-site/static-site-build
-        target: /nikola/static-cmd
+      - ./static-site/static-site-build:/nikola/static-cmd
     command: [".static-cmd"]
   front:
     image: nginx:latest
