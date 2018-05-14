@@ -27,11 +27,7 @@ node{
       echo "Stopping Services"
       sh  "/usr/local/bin/docker-compose down"
     }
-
-    stage('Building Static Site') {
-      echo "Building Static Site"
-      sh "docker run -v \$(pwd)/static-site:/nikola dragas/nikola:alpine sh static-site-build"
-    }
+    
 
     stage('Start Services') {
       echo "Starting project"
