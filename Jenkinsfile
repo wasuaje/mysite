@@ -28,6 +28,11 @@ node{
       sh  "/usr/local/bin/docker-compose down"
     }
 
+    stage('Building Static Site') {
+      echo "Building Static Site"
+      sh  "docker run -it -v $(pwd)/static-site:/nikola dragas/nikola:alpine sh static-site-build"
+    }
+
     stage('Start Services') {
       echo "Starting project"
       sh  "/usr/local/bin/docker-compose up -d"
