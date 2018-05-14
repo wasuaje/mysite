@@ -30,7 +30,7 @@ node{
 
     stage('Building Static Site') {
       echo "Building Static Site"
-      sh  "docker run -it -v $(pwd)/static-site:/nikola dragas/nikola:alpine sh static-site-build"
+      sh "docker run -it -v ${pwd}/static-site:/nikola dragas/nikola:alpine sh static-site-build"
     }
 
     stage('Start Services') {
