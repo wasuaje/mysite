@@ -8,11 +8,20 @@ git clone https://github.com/wasuaje/wasuaje-site.git
 if [ $? -ne 0 ]; then
     exit 1
 fi
-echo "[STATIC SITE] git clone"
+
 cd wasuaje-site
+if [ $? -ne 0 ]; then
+    exit 1
+fi
 echo "[STATIC SITE] nikola build"
 nikola build
+if [ $? -ne 0 ]; then
+    exit 1
+fi
 echo "[STATIC SITE] copying files"
 cp -r output/* /usr/src/static-site/
 
+if [ $? -ne 0 ]; then
+    exit 1
+fi
 ###docker run --rm -i -v /root/output:/nikola dragas/nikola:alpine git clone https://github.com/wasuaje/wasuaje-site.git && cd /nikola/wasuaje-site && nikola build
