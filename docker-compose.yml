@@ -11,7 +11,7 @@ services:
       - type: bind
         source: ./static-site
         target: /nikola
-    command: ["ls -la"]
+    command: ["pwd"]
   front:
     image: nginx:latest
     ports:
