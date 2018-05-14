@@ -9,7 +9,7 @@ services:
         volume:
           nocopy: true      
       - type: bind
-        source: $(pwd)/static-site/static-site-build
+        source: $$(pwd)/static-site/static-site-build
         target: /nikola/static-cmd
     command: [".static-cmd"]
   front:
