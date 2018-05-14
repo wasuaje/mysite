@@ -10,8 +10,8 @@ services:
           nocopy: true      
       - type: bind
         source: ./static-site/static-site-build
-        target: /nikola
-    command: ["./static-site-build"]
+        target: /usr/src
+    command: ["sh /usr/src/static-site-build"]
   front:
     image: nginx:latest
     ports:
