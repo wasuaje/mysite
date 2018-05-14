@@ -1,7 +1,7 @@
 #!/bin/bash
 #echo "[STATIC SITE] YUM"
 #apt-get install -y git
-rm -rr wasuaje-site/
+rm -rf wasuaje-site
 echo "[STATIC SITE] git clone"
 git clone https://github.com/wasuaje/wasuaje-site.git
 
