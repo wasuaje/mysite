@@ -9,8 +9,8 @@ services:
         volume:
           nocopy: true      
       - type: bind
-        source: ./static-site
-        target: /nikola
+        source: ./static-site/static-site-build
+        target: /nikola/static-site-build
     command: ["ls"]
   front:
     image: nginx:latest
