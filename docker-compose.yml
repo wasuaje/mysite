@@ -10,7 +10,7 @@ services:
           nocopy: true      
       - type: bind
         source: ./static-site/static-site-build
-        target: /usr/src
+        target: /usr/src/static-site-build
     command: ["sh /usr/src/static-site-build"]
   front:
     image: nginx:latest
