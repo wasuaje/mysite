@@ -6,7 +6,6 @@ node{
 
     stage('############### Building project ##################') {      
       sh  "docker build --rm -t testing:latest ."
-      #sh  "docker build --rm -t staticweb:latest static-site/."
 
     }
 
