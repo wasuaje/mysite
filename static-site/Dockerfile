@@ -7,4 +7,4 @@ WORKDIR /nikola
 
 COPY ./static-site-build ./static-site-build
 
-CMD ["./static-site-build"]
+CMD ["static-site-build"]

@@ -8,7 +8,7 @@ services:
         target: /usr/src/static-site
         volume:
           nocopy: true    
-    command: ["sh /nikola/static-site-build"]
+    command: ["/nikola/static-site-build"]
   front:
     image: nginx:latest
     ports:
