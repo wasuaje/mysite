@@ -1,19 +1,17 @@
 node{
 
-   stage('Check Out') {
+   stage('############### Checking out repo ##################') {
     checkout scm
     }
 
-    stage('Build') {
-      echo "Building project"
+    stage('############### Building project ##################') {      
       sh  "docker build --rm -t testing:latest ."
-      sh  "docker build --rm -t staticweb:latest static-site/."
+      #sh  "docker build --rm -t staticweb:latest static-site/."
 
     }
 
-    stage('Test') {
+    stage('############### Running Tests ##################') {
 
-      echo "Running Tests"
       sh '''docker run testing:latest ./test
  
       if [ $? -ne 0 ]; then
@@ -24,19 +22,16 @@ node{
           '''
     }
 
-    stage('Stop Services') {
-      echo "Stopping Services"
+    stage('############### Stopping services ##################') {      
       sh  "/usr/local/bin/docker-compose down"
     }
     
 
-    stage('Start Services') {
-      echo "Starting project"
+    stage('############### Starting Services ##################') {      
       sh  "/usr/local/bin/docker-compose up -d"
     }
 
-    stage('Print Logs') {
-      echo "Printing logs."
+    stage('############### Printing logs ##################') {      
       sh  '''/usr/local/bin/docker-compose logs --tail="all" '''
 
     }
